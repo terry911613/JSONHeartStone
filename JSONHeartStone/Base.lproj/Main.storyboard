@@ -1,24 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yKj-nu-uUS">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Card View Controller-->
+        <scene sceneID="MC8-iZ-Bls">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="awB-lZ-hm2" customClass="CardViewController" customModule="JSONHeartStone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1a6-sw-b2n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8iW-uW-0HY">
+                                <rect key="frame" x="0.0" y="64" width="414" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Mxf-pl-Dog"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="COMMOM"/>
+                                    <segment title="RARE"/>
+                                    <segment title="EPIC"/>
+                                    <segment title="LEGENDARY"/>
+                                </segments>
+                                <connections>
+                                    <action selector="raritySegmented:" destination="awB-lZ-hm2" eventType="valueChanged" id="6sp-PI-w9U"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YKk-Gb-hCr">
+                                <rect key="frame" x="0.0" y="129" width="414" height="607"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="cardCell" rowHeight="150" id="Esc-e3-89e" customClass="CardTableViewCell" customModule="JSONHeartStone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Esc-e3-89e" id="nvr-Sw-kju">
+                                            <rect key="frame" x="0.0" y="0.0" width="362" height="149.66666666666666"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vI7-1T-2z0">
+                                                    <rect key="frame" x="20" y="14" width="100" height="120"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYG-Lm-s1a">
+                                                    <rect key="frame" x="128" y="44" width="266" height="60"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cardImageView" destination="vI7-1T-2z0" id="8Rj-Bx-eyI"/>
+                                            <outlet property="cardNameLabel" destination="fYG-Lm-s1a" id="Nc6-FS-vZu"/>
+                                            <segue destination="NCh-dq-cV2" kind="show" identifier="cardDetailSegue" id="iBG-E6-hMB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="awB-lZ-hm2" id="Sqw-3T-wjM"/>
+                                    <outlet property="delegate" destination="awB-lZ-hm2" id="vhh-EY-Wn1"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ihk-vG-F7f">
+                                <rect key="frame" x="0.0" y="94" width="414" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Y7c-RF-JLt"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="0"/>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                    <segment title="3"/>
+                                    <segment title="4"/>
+                                    <segment title="5"/>
+                                    <segment title="6"/>
+                                    <segment title="7"/>
+                                    <segment title="8"/>
+                                    <segment title="9"/>
+                                    <segment title="10+"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8iW-uW-0HY" firstAttribute="leading" secondItem="qfH-ck-ogj" secondAttribute="leading" id="7hD-ox-gVH"/>
+                            <constraint firstItem="8iW-uW-0HY" firstAttribute="trailing" secondItem="qfH-ck-ogj" secondAttribute="trailing" id="C8T-fv-scm"/>
+                            <constraint firstItem="YKk-Gb-hCr" firstAttribute="trailing" secondItem="qfH-ck-ogj" secondAttribute="trailing" id="Dam-2k-2dB"/>
+                            <constraint firstItem="ihk-vG-F7f" firstAttribute="trailing" secondItem="qfH-ck-ogj" secondAttribute="trailing" id="ENm-Gi-Lxy"/>
+                            <constraint firstItem="YKk-Gb-hCr" firstAttribute="bottom" secondItem="qfH-ck-ogj" secondAttribute="bottom" id="GJa-2X-zOG"/>
+                            <constraint firstItem="YKk-Gb-hCr" firstAttribute="leading" secondItem="qfH-ck-ogj" secondAttribute="leading" id="PfZ-7a-fmd"/>
+                            <constraint firstItem="ihk-vG-F7f" firstAttribute="top" secondItem="8iW-uW-0HY" secondAttribute="bottom" constant="5" id="VTC-EK-Ld9"/>
+                            <constraint firstItem="8iW-uW-0HY" firstAttribute="top" secondItem="qfH-ck-ogj" secondAttribute="top" id="dyQ-Ak-xuC"/>
+                            <constraint firstItem="ihk-vG-F7f" firstAttribute="leading" secondItem="qfH-ck-ogj" secondAttribute="leading" id="lal-vA-orW"/>
+                            <constraint firstItem="YKk-Gb-hCr" firstAttribute="top" secondItem="ihk-vG-F7f" secondAttribute="bottom" constant="10" id="tM0-g5-9YD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qfH-ck-ogj"/>
                     </view>
+                    <navigationItem key="navigationItem" id="q3i-HU-7u7"/>
+                    <connections>
+                        <outlet property="cardTableView" destination="YKk-Gb-hCr" id="Gi8-eD-2sy"/>
+                        <outlet property="selectedRarity" destination="8iW-uW-0HY" id="UNU-Sj-kEn"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9bC-hI-HxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2234.7826086956525" y="848.64130434782612"/>
+        </scene>
+        <!--Card Detail View Controller-->
+        <scene sceneID="cm3-sL-UP5">
+            <objects>
+                <viewController id="NCh-dq-cV2" customClass="CardDetailViewController" customModule="JSONHeartStone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FaF-eX-Rzd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y9G-7k-6wz">
+                                <rect key="frame" x="32" y="95" width="350" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvt-zf-si3">
+                                <rect key="frame" x="32" y="503" width="350" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Cz9-9J-bPN"/>
+                    </view>
+                    <connections>
+                        <outlet property="cardImageView" destination="y9G-7k-6wz" id="hGS-f6-bPc"/>
+                        <outlet property="cardNameLabel" destination="tvt-zf-si3" id="Ot3-0F-iZF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8XG-ul-8PV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2989.8550724637685" y="848.64130434782612"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sWS-9d-LBu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yKj-nu-uUS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3DN-p0-G2z">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="awB-lZ-hm2" kind="relationship" relationship="rootViewController" id="UtQ-cr-ukP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hgy-Dr-koT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1328.985507246377" y="848.64130434782612"/>
         </scene>
     </scenes>
 </document>
