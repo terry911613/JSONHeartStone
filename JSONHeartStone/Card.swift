@@ -16,5 +16,4 @@ struct Card: Codable {
     var health: Int?
     var cardClass: String?
     var id: String?
-    var text: String?
 }

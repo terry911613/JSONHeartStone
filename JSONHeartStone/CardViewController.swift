@@ -30,6 +30,7 @@ class CardViewController: UIViewController {
     
     @IBOutlet weak var cardTableView: UITableView!
     @IBOutlet weak var selectedRarity: UISegmentedControl!
+    @IBOutlet weak var selectedCost: UISegmentedControl!
     
     var showCards = [Card]()
     
@@ -37,6 +38,7 @@ class CardViewController: UIViewController {
     var rareCards = [Card]()
     var epicCards = [Card]()
     var legendaryCards = [Card]()
+    var allCardsArray = [[Card]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +70,18 @@ class CardViewController: UIViewController {
                             }
                         }
                         DispatchQueue.main.async {
-                            self.showCards = self.commomCards
+                            self.allCardsArray.append(self.commomCards)
+                            self.allCardsArray.append(self.rareCards)
+                            self.allCardsArray.append(self.epicCards)
+                            self.allCardsArray.append(self.legendaryCards)
+                            for card in self.commomCards{
+                                if let cost = card.cost{
+                                    if cost == 0{
+                                        self.showCards.append(card)
+                                    }
+                                }
+                            }
+                            self.title = "COMMOM Cost : 0"
                             self.cardTableView.reloadData()
                         }
                     }
@@ -84,21 +97,141 @@ class CardViewController: UIViewController {
     @IBAction func raritySegmented(_ sender: UISegmentedControl) {
         
         switch sender.selectedSegmentIndex {
-            
         case 0:
-            showCards = commomCards
-            self.title = Rarity(rawValue: 0)?.rarity
+            getRarityCard(rarity: 0)
+            if let rarity = Rarity(rawValue: selectedRarity.selectedSegmentIndex)?.rarity{
+                self.title = "\(rarity) Cost : \(selectedCost.selectedSegmentIndex)"
+            }
         case 1:
-            showCards = rareCards
-            self.title = Rarity(rawValue: 1)?.rarity
+            getRarityCard(rarity: 1)
+            if let rarity = Rarity(rawValue: selectedRarity.selectedSegmentIndex)?.rarity{
+                self.title = "\(rarity) Cost : \(selectedCost.selectedSegmentIndex)"
+            }
         case 2:
-            showCards = epicCards
-            self.title = Rarity(rawValue: 2)?.rarity
+            getRarityCard(rarity: 2)
+            if let rarity = Rarity(rawValue: selectedRarity.selectedSegmentIndex)?.rarity{
+                self.title = "\(rarity) Cost : \(selectedCost.selectedSegmentIndex)"
+            }
         case 3:
-            showCards = legendaryCards
-            self.title = Rarity(rawValue: 3)?.rarity
+            getRarityCard(rarity: 3)
+            if let rarity = Rarity(rawValue: selectedRarity.selectedSegmentIndex)?.rarity{
+                self.title = "\(rarity) Cost : \(selectedCost.selectedSegmentIndex)"
+            }
         default:
             break
+        }
+    }
+    func getRarityCard(rarity: Int){
+        showCards = [Card]()
+        for i in 0...10{
+            if selectedCost.selectedSegmentIndex == i{
+                for card in allCardsArray[selectedRarity.selectedSegmentIndex]{
+                    if let cardCost = card.cost{
+                        if cardCost == i{
+                            showCards.append(card)
+                        }
+                    }
+                }
+                break
+            }
+        }
+        DispatchQueue.main.async {
+            self.cardTableView.reloadData()
+        }
+    }
+    
+    @IBAction func costSegmented(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            getOneToNineCostCard(cost: 0)
+            if let rarity = Rarity(rawValue: selectedRarity.selectedSegmentIndex)?.rarity{
+                self.title = "\(rarity) Cost : 0"
+            }
+        case 1:
+            getOneToNineCostCard(cost: 1)
+            if let rarity = Rarity(rawValue: selectedRarity.selectedSegmentIndex)?.rarity{
+                self.title = "\(rarity) Cost : 1"
+            }
+        case 2:
+            getOneToNineCostCard(cost: 2)
+            if let rarity = Rarity(rawValue: selectedRarity.selectedSegmentIndex)?.rarity{
+                self.title = "\(rarity) Cost : 2"
+            }
+        case 3:
+            getOneToNineCostCard(cost: 3)
+            if let rarity = Rarity(rawValue: selectedRarity.selectedSegmentIndex)?.rarity{
+                self.title = "\(rarity) Cost : 3"
+            }
+        case 4:
+            getOneToNineCostCard(cost: 4)
+            if let rarity = Rarity(rawValue: selectedRarity.selectedSegmentIndex)?.rarity{
+                self.title = "\(rarity) Cost : 4"
+            }
+        case 5:
+            getOneToNineCostCard(cost: 5)
+            if let rarity = Rarity(rawValue: selectedRarity.selectedSegmentIndex)?.rarity{
+                self.title = "\(rarity) Cost : 5"
+            }
+        case 6:
+            getOneToNineCostCard(cost: 6)
+            if let rarity = Rarity(rawValue: selectedRarity.selectedSegmentIndex)?.rarity{
+                self.title = "\(rarity) Cost : 6"
+            }
+        case 7:
+            getOneToNineCostCard(cost: 7)
+            if let rarity = Rarity(rawValue: selectedRarity.selectedSegmentIndex)?.rarity{
+                self.title = "\(rarity) Cost : 7"
+            }
+        case 8:
+            getOneToNineCostCard(cost: 8)
+            if let rarity = Rarity(rawValue: selectedRarity.selectedSegmentIndex)?.rarity{
+                self.title = "\(rarity) Cost : 8"
+            }
+        case 9:
+            getOneToNineCostCard(cost: 9)
+            if let rarity = Rarity(rawValue: selectedRarity.selectedSegmentIndex)?.rarity{
+                self.title = "\(rarity) Cost : 9"
+            }
+        case 10:
+            getTenPlusCard()
+            if let rarity = Rarity(rawValue: selectedRarity.selectedSegmentIndex)?.rarity{
+                self.title = "\(rarity) Cost : 10"
+            }
+        default:
+            break
+        }
+    }
+    func getOneToNineCostCard(cost: Int){
+        showCards = [Card]()
+        for i in 0...3{
+            if selectedRarity.selectedSegmentIndex == i{
+                for card in allCardsArray[i]{
+                    if let cardCost = card.cost{
+                        if cardCost == cost{
+                            showCards.append(card)
+                        }
+                    }
+                }
+                break
+            }
+        }
+        DispatchQueue.main.async {
+            self.cardTableView.reloadData()
+        }
+    }
+    func getTenPlusCard(){
+        showCards = [Card]()
+        for i in 0...3{
+            if selectedRarity.selectedSegmentIndex == i{
+                for card in allCardsArray[i]{
+                    if let cardCost = card.cost{
+                        if cardCost >= 10{
+                            showCards.append(card)
+                        }
+                    }
+                }
+                break
+            }
         }
         DispatchQueue.main.async {
             self.cardTableView.reloadData()

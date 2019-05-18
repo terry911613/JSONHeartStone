@@ -87,6 +87,9 @@
                                     <segment title="9"/>
                                     <segment title="10+"/>
                                 </segments>
+                                <connections>
+                                    <action selector="costSegmented:" destination="awB-lZ-hm2" eventType="valueChanged" id="dfy-57-zdq"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -107,6 +110,7 @@
                     <navigationItem key="navigationItem" id="q3i-HU-7u7"/>
                     <connections>
                         <outlet property="cardTableView" destination="YKk-Gb-hCr" id="Gi8-eD-2sy"/>
+                        <outlet property="selectedCost" destination="ihk-vG-F7f" id="Ubi-QJ-TB4"/>
                         <outlet property="selectedRarity" destination="8iW-uW-0HY" id="UNU-Sj-kEn"/>
                     </connections>
                 </viewController>
