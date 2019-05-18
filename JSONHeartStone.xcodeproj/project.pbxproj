@@ -15,6 +15,8 @@
 		44B59C8E228E81F500DCB3B8 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B59C8D228E81F500DCB3B8 /* CardTableViewCell.swift */; };
 		44B59C90228EB2D000DCB3B8 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B59C8F228EB2D000DCB3B8 /* CardViewController.swift */; };
 		44B59C92228EB3AB00DCB3B8 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B59C91228EB3AB00DCB3B8 /* CardDetailViewController.swift */; };
+		44DA767F2290675C00692CD8 /* CardClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DA767E2290675C00692CD8 /* CardClass.swift */; };
+		44DA76812290679400692CD8 /* Rarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DA76802290679400692CD8 /* Rarity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		44B59C8D228E81F500DCB3B8 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		44B59C8F228EB2D000DCB3B8 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		44B59C91228EB3AB00DCB3B8 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
+		44DA767E2290675C00692CD8 /* CardClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardClass.swift; sourceTree = "<group>"; };
+		44DA76802290679400692CD8 /* Rarity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rarity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				44B59C8F228EB2D000DCB3B8 /* CardViewController.swift */,
 				44B59C91228EB3AB00DCB3B8 /* CardDetailViewController.swift */,
 				44B59C8D228E81F500DCB3B8 /* CardTableViewCell.swift */,
+				44DA76802290679400692CD8 /* Rarity.swift */,
+				44DA767E2290675C00692CD8 /* CardClass.swift */,
 				44B59C5D228E5E3E00DCB3B8 /* Main.storyboard */,
 				44B59C60228E5E4100DCB3B8 /* Assets.xcassets */,
 				44B59C62228E5E4100DCB3B8 /* LaunchScreen.storyboard */,
@@ -144,6 +150,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44DA76812290679400692CD8 /* Rarity.swift in Sources */,
+				44DA767F2290675C00692CD8 /* CardClass.swift in Sources */,
 				44B59C92228EB3AB00DCB3B8 /* CardDetailViewController.swift in Sources */,
 				44B59C6C228E5E5100DCB3B8 /* Card.swift in Sources */,
 				44B59C5A228E5E3E00DCB3B8 /* AppDelegate.swift in Sources */,

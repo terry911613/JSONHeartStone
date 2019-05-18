@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Card View Controller-->
+        <!--爐石-->
         <scene sceneID="MC8-iZ-Bls">
             <objects>
                 <viewController id="awB-lZ-hm2" customClass="CardViewController" customModule="JSONHeartStone" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,37 +19,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8iW-uW-0HY">
-                                <rect key="frame" x="0.0" y="64" width="414" height="26"/>
+                                <rect key="frame" x="0.0" y="99" width="414" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="Mxf-pl-Dog"/>
+                                    <constraint firstAttribute="height" constant="30" id="Mxf-pl-Dog"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="COMMOM"/>
-                                    <segment title="RARE"/>
-                                    <segment title="EPIC"/>
-                                    <segment title="LEGENDARY"/>
+                                    <segment title="普通"/>
+                                    <segment title="精良"/>
+                                    <segment title="史詩"/>
+                                    <segment title="傳說"/>
                                 </segments>
                                 <connections>
                                     <action selector="raritySegmented:" destination="awB-lZ-hm2" eventType="valueChanged" id="6sp-PI-w9U"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YKk-Gb-hCr">
-                                <rect key="frame" x="0.0" y="129" width="414" height="607"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YKk-Gb-hCr">
+                                <rect key="frame" x="0.0" y="174" width="414" height="562"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="cardCell" rowHeight="150" id="Esc-e3-89e" customClass="CardTableViewCell" customModule="JSONHeartStone" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="150"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="cardCell" rowHeight="140" id="Esc-e3-89e" customClass="CardTableViewCell" customModule="JSONHeartStone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Esc-e3-89e" id="nvr-Sw-kju">
-                                            <rect key="frame" x="0.0" y="0.0" width="362" height="149.66666666666666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="362" height="139.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vI7-1T-2z0">
-                                                    <rect key="frame" x="20" y="14" width="100" height="120"/>
+                                                    <rect key="frame" x="20" y="9" width="100" height="120"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYG-Lm-s1a">
-                                                    <rect key="frame" x="128" y="44" width="266" height="60"/>
+                                                    <rect key="frame" x="128" y="39" width="234" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
@@ -69,10 +69,31 @@
                                     <outlet property="delegate" destination="awB-lZ-hm2" id="vhh-EY-Wn1"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ihk-vG-F7f">
-                                <rect key="frame" x="0.0" y="94" width="414" height="26"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YF6-SX-rgw">
+                                <rect key="frame" x="0.0" y="64" width="414" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="Y7c-RF-JLt"/>
+                                    <constraint firstAttribute="height" constant="30" id="bWO-wI-MxO"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="中立"/>
+                                    <segment title="法師"/>
+                                    <segment title="牧師"/>
+                                    <segment title="盜賊"/>
+                                    <segment title="德"/>
+                                    <segment title="獵人"/>
+                                    <segment title="戰士"/>
+                                    <segment title="薩滿"/>
+                                    <segment title="術士"/>
+                                    <segment title="聖騎"/>
+                                </segments>
+                                <connections>
+                                    <action selector="cardClassSegmented:" destination="awB-lZ-hm2" eventType="valueChanged" id="ZYT-fW-FqP"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ihk-vG-F7f">
+                                <rect key="frame" x="0.0" y="134" width="414" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Y7c-RF-JLt"/>
                                 </constraints>
                                 <segments>
                                     <segment title="0"/>
@@ -94,22 +115,30 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="YF6-SX-rgw" firstAttribute="trailing" secondItem="qfH-ck-ogj" secondAttribute="trailing" id="2K9-pQ-lSF"/>
+                            <constraint firstItem="ihk-vG-F7f" firstAttribute="trailing" secondItem="qfH-ck-ogj" secondAttribute="trailing" id="5xO-Qt-yLD"/>
                             <constraint firstItem="8iW-uW-0HY" firstAttribute="leading" secondItem="qfH-ck-ogj" secondAttribute="leading" id="7hD-ox-gVH"/>
                             <constraint firstItem="8iW-uW-0HY" firstAttribute="trailing" secondItem="qfH-ck-ogj" secondAttribute="trailing" id="C8T-fv-scm"/>
                             <constraint firstItem="YKk-Gb-hCr" firstAttribute="trailing" secondItem="qfH-ck-ogj" secondAttribute="trailing" id="Dam-2k-2dB"/>
                             <constraint firstItem="ihk-vG-F7f" firstAttribute="trailing" secondItem="qfH-ck-ogj" secondAttribute="trailing" id="ENm-Gi-Lxy"/>
                             <constraint firstItem="YKk-Gb-hCr" firstAttribute="bottom" secondItem="qfH-ck-ogj" secondAttribute="bottom" id="GJa-2X-zOG"/>
+                            <constraint firstItem="ihk-vG-F7f" firstAttribute="top" secondItem="8iW-uW-0HY" secondAttribute="bottom" constant="5" id="Jfb-pI-F3d"/>
                             <constraint firstItem="YKk-Gb-hCr" firstAttribute="leading" secondItem="qfH-ck-ogj" secondAttribute="leading" id="PfZ-7a-fmd"/>
-                            <constraint firstItem="ihk-vG-F7f" firstAttribute="top" secondItem="8iW-uW-0HY" secondAttribute="bottom" constant="5" id="VTC-EK-Ld9"/>
-                            <constraint firstItem="8iW-uW-0HY" firstAttribute="top" secondItem="qfH-ck-ogj" secondAttribute="top" id="dyQ-Ak-xuC"/>
+                            <constraint firstItem="YF6-SX-rgw" firstAttribute="leading" secondItem="qfH-ck-ogj" secondAttribute="leading" id="Rkm-hn-CFm"/>
+                            <constraint firstItem="YF6-SX-rgw" firstAttribute="top" secondItem="qfH-ck-ogj" secondAttribute="top" id="Sqx-Ak-98a"/>
+                            <constraint firstItem="8iW-uW-0HY" firstAttribute="leading" secondItem="qfH-ck-ogj" secondAttribute="leading" id="T9a-LD-lKc"/>
+                            <constraint firstItem="8iW-uW-0HY" firstAttribute="top" secondItem="YF6-SX-rgw" secondAttribute="bottom" constant="5" id="Vie-67-bm7"/>
                             <constraint firstItem="ihk-vG-F7f" firstAttribute="leading" secondItem="qfH-ck-ogj" secondAttribute="leading" id="lal-vA-orW"/>
-                            <constraint firstItem="YKk-Gb-hCr" firstAttribute="top" secondItem="ihk-vG-F7f" secondAttribute="bottom" constant="10" id="tM0-g5-9YD"/>
+                            <constraint firstItem="8iW-uW-0HY" firstAttribute="trailing" secondItem="qfH-ck-ogj" secondAttribute="trailing" id="mdi-52-Cw7"/>
+                            <constraint firstItem="ihk-vG-F7f" firstAttribute="leading" secondItem="qfH-ck-ogj" secondAttribute="leading" id="pAT-L4-GrP"/>
+                            <constraint firstItem="YKk-Gb-hCr" firstAttribute="top" secondItem="ihk-vG-F7f" secondAttribute="bottom" constant="10" id="zPZ-fA-JDF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qfH-ck-ogj"/>
                     </view>
-                    <navigationItem key="navigationItem" id="q3i-HU-7u7"/>
+                    <navigationItem key="navigationItem" title="爐石" id="q3i-HU-7u7"/>
                     <connections>
                         <outlet property="cardTableView" destination="YKk-Gb-hCr" id="Gi8-eD-2sy"/>
+                        <outlet property="selectedCardClass" destination="YF6-SX-rgw" id="hui-le-5S1"/>
                         <outlet property="selectedCost" destination="ihk-vG-F7f" id="Ubi-QJ-TB4"/>
                         <outlet property="selectedRarity" destination="8iW-uW-0HY" id="UNU-Sj-kEn"/>
                     </connections>
@@ -127,13 +156,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y9G-7k-6wz">
-                                <rect key="frame" x="32" y="95" width="350" height="400"/>
+                                <rect key="frame" x="32" y="180" width="181" height="256"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvt-zf-si3">
-                                <rect key="frame" x="32" y="503" width="350" height="120"/>
+                                <rect key="frame" x="32" y="95" width="350" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gWw-bH-kMf">
+                                <rect key="frame" x="32" y="444" width="350" height="201"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yp3-DX-yIf">
+                                <rect key="frame" x="221" y="268" width="144" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6b8-xh-eum">
+                                <rect key="frame" x="221" y="221" width="144" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZc-pv-AGN">
+                                <rect key="frame" x="221" y="315" width="144" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGH-sr-j5l">
+                                <rect key="frame" x="221" y="362" width="144" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -142,8 +207,13 @@
                         <viewLayoutGuide key="safeArea" id="Cz9-9J-bPN"/>
                     </view>
                     <connections>
+                        <outlet property="attackLabel" destination="sZc-pv-AGN" id="ihb-NB-gom"/>
+                        <outlet property="cardClassLabel" destination="6b8-xh-eum" id="hfM-zH-yBF"/>
                         <outlet property="cardImageView" destination="y9G-7k-6wz" id="hGS-f6-bPc"/>
                         <outlet property="cardNameLabel" destination="tvt-zf-si3" id="Ot3-0F-iZF"/>
+                        <outlet property="costLabel" destination="Yp3-DX-yIf" id="Tkw-57-lKt"/>
+                        <outlet property="healthLabel" destination="IGH-sr-j5l" id="NXl-tx-QA5"/>
+                        <outlet property="textTextView" destination="gWw-bH-kMf" id="jbN-b6-vzi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8XG-ul-8PV" userLabel="First Responder" sceneMemberID="firstResponder"/>
